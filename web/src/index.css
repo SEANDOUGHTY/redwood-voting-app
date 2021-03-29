@@ -1,0 +1,14 @@
+.voteBox{
+  width: 200px;
+  text-align: center;
+  border: 1px solid black;
+  padding-bottom: 20px;
+}
+
+.voteLeft{
+  float: left;
+}
+
+.voteRight{
+  float: left
+}
