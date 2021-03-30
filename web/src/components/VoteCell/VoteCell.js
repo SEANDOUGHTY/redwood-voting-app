@@ -5,7 +5,7 @@ export const beforeQuery = (props) => {
 
 export const QUERY = gql`
   query VoteQuery {
-    votes{filter: {vote: dog}} {
+    votes(vote: dog) {
       vote
     }
   }

@@ -10,6 +10,3 @@ node_modules
 yarn-error.log
 web/public/mockServiceWorker.js
 .vscode
-.editorconfig
-.env.defaults
-.env.example

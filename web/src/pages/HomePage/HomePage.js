@@ -12,7 +12,7 @@ const HomePage = () => {
       </div>
       <div className="voteBox voteRight">
         <h3>Cats</h3>
-        <p>0 Votes (50%)</p>
+        <VoteCell type="Cat" />
         <button>Vote!</button>
       </div>
     </>
