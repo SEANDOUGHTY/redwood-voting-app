@@ -1,3 +1,5 @@
+import VoteCell from 'src/components/VoteCell'
+
 const HomePage = () => {
   return (
     <>
@@ -5,7 +7,7 @@ const HomePage = () => {
 
       <div className="voteBox voteLeft">
         <h3>Dogs</h3>
-        <p>0 Votes (50%)</p>
+        <VoteCell type="Dog" />
         <button>Vote!</button>
       </div>
       <div className="voteBox voteRight">
