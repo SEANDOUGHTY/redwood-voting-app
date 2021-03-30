@@ -1,21 +1,28 @@
 export const schema = gql`
   type Vote {
     id: Int!
-    vote: String!
+    choice: String!
     dateTime: DateTime!
   }
 
   type Query {
     votes: [Vote!]!
+    vote(id: Int!): Vote
   }
 
   input CreateVoteInput {
-    vote: String!
+    choice: String!
     dateTime: DateTime!
   }
 
   input UpdateVoteInput {
-    vote: String
+    choice: String
     dateTime: DateTime
+  }
+
+  type Mutation {
+    createVote(input: CreateVoteInput!): Vote!
+    updateVote(id: Int!, input: UpdateVoteInput!): Vote!
+    deleteVote(id: Int!): Vote!
   }
 `

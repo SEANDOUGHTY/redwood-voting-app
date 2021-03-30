@@ -1,33 +1,19 @@
-export const beforeQuery = (props) => {
-  console.log(props)
-  return { variables: props, fetchPolicy: 'network-only' }
-}
+import Vote from 'src/components/Vote'
 
 export const QUERY = gql`
-  query VoteQuery {
-    votes(vote: dog) {
-      vote
+  query FIND_VOTE_BY_ID($id: Int!) {
+    vote: vote(id: $id) {
+      id
+      choice
+      dateTime
     }
   }
 `
 
 export const Loading = () => <div>Loading...</div>
 
-export const Empty = () => <div>Empty</div>
+export const Empty = () => <div>Vote not found</div>
 
-export const Failure = ({ error }) => <div>Error: {error.message}</div>
-
-export const Success = ({ votes }) => {
-  console.log(votes.length)
-
-  const dogVotes = votes.filter(function (el) {
-    return el.vote == 'Dog'
-  })
-  console.log(dogVotes.length)
-
-  return (
-    <p>
-      {dogVotes.length} Votes ({(dogVotes.length / votes.length) * 100}%)
-    </p>
-  )
+export const Success = ({ vote }) => {
+  return <Vote vote={vote} />
 }
