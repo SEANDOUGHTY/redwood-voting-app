@@ -12,6 +12,10 @@ export const handler = createGraphQLHandler({
   schema: makeMergedSchema({
     schemas,
     services: makeServices({ services }),
+    cors: {
+      origin: '*',
+      credentials: true,
+    },
   }),
 
   onException: () => {
