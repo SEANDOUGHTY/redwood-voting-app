@@ -7,7 +7,7 @@
 
 [web]
   port = 8910
-  apiProxyPath = "/.redwood/functions"
+  apiProxyPath = "https://redwood-api-lm96.onrender.com"
 [api]
   port = 8911
   schemaPath = "./api/db/schema.prisma"
