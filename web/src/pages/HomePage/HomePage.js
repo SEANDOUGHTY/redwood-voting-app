@@ -25,7 +25,7 @@ const HomePage = () => {
   }
 
   return (
-    <>
+    <div className="votingApp">
       <h1>Sample Voting App</h1>
 
       <div className="voteBox voteLeft">
@@ -50,7 +50,7 @@ const HomePage = () => {
           Vote!
         </button>
       </div>
-    </>
+    </div>
   )
 }
 
