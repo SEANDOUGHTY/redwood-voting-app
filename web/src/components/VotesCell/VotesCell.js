@@ -1,10 +1,9 @@
 import { Link, routes } from '@redwoodjs/router'
 
 export const QUERY = gql`
-  query VOTES {
-    votes {
-      choice
-    }
+  query VOTE($type: String) {
+    count: voteCounts(choice: $type)
+    allCount: totalVotes
   }
 `
 
@@ -21,6 +20,10 @@ export const Empty = () => {
   )
 }
 
-export const Success = ({ votes }) => {
-  return JSON.stringify(votes)
+export const Success = ({ count, allCount }) => {
+  return (
+    <p>
+      {count} Votes! ({((count / allCount) * 100).toFixed(1)}%)
+    </p>
+  )
 }
