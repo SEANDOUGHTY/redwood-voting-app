@@ -15,7 +15,6 @@ export const handler = createGraphQLHandler({
     cors: {
       origin: '*',
       credentials: true,
-      methods: ['GET', 'POST'],
     },
   }),
 
