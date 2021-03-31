@@ -2,7 +2,7 @@ import { Link, routes } from '@redwoodjs/router'
 
 export const QUERY = gql`
   query VOTE($type: String) {
-    count: voteCounts(choice: $type)
+    count: voteCount(choice: $type)
     allCount: totalVotes
   }
 `

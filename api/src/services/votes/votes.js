@@ -29,12 +29,10 @@ export const deleteVote = ({ id }) => {
   })
 }
 
-export const voteCounts = ({ choice }) => {
-  const count = db.vote.count({
+export const voteCount = ({ choice }) => {
+  return db.vote.count({
     where: { choice: choice },
   })
-
-  return count
 }
 
 export const totalVotes = () => {

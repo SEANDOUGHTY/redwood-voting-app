@@ -8,7 +8,7 @@ export const schema = gql`
   type Query {
     votes: [Vote!]!
     vote(id: Int): Vote
-    voteCounts(choice: String): Int!
+    voteCount(choice: String): Int!
     totalVotes: Int!
   }
 
