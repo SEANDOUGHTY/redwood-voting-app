@@ -1,17 +1,6 @@
 services:
 - type: web
-  name: redwood-api
-  env: node
-  buildCommand: yarn && yarn rw prisma migrate deploy && yarn rw build api
-  startCommand: cd api && yarn api-server --functions ./dist/functions
-  envVars:
-  - key: DATABASE_URL
-    fromDatabase:
-      name: redwood-db
-      property: connectionString
-
-- type: web
-  name: redwood-web
+  name: redwood-test-cli-web
   env: static
   buildCommand: yarn && yarn rw build web
   staticPublishPath: ./web/dist
@@ -23,5 +12,19 @@ services:
     source: /*
     destination: /index.html
 
+- type: web
+  name: redwood-test-cli-api
+  env: node
+  buildCommand: yarn && yarn rw prisma migrate deploy && yarn rw build api
+  startCommand: cd api && yarn api-server --functions ./dist/functions
+  envVars:
+  - key: NODE_VERSION
+    value: 14
+  - key: DATABASE_URL
+  fromDatabase:
+    name: redwood-db
+    property: connectionString
+
 databases:
-- name: redwood-db
+  - name: redwood-test-cli-db
+
