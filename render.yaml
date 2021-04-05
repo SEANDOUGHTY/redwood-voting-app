@@ -4,6 +4,9 @@ services:
   env: static
   buildCommand: yarn && yarn rw build web
   staticPublishPath: ./web/dist
+  envVars:
+  - key: NODE_VERSION
+    value: 14
   routes:
   - type: rewrite
     source: /.redwood/functions
