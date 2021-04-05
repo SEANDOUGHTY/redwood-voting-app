@@ -24,8 +24,8 @@ services:
   - key: NODE_VERSION
     value: 14
   - key: DATABASE_URL
-    value: /data/sqlite.db
-  # disk:
-  #   name: sqlite-data
-  #   mountPath: /data
-  #   sizeGB: 1
+    value: file:/data/sqlite.db
+  disk:
+    name: sqlite-data
+    mountPath: /api/db/data
+    sizeGB: 5
