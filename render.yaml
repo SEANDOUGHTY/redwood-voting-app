@@ -25,7 +25,7 @@ services:
     value: 14
   - key: DATABASE_URL
     value: /data/sqlite.db
-  disk:
-    name: sqlite-data
-    mountPath: /data
-    sizeGB: 1
+  # disk:
+  #   name: sqlite-data
+  #   mountPath: /data
+  #   sizeGB: 1
