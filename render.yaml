@@ -9,8 +9,8 @@ services:
     value: 14
   routes:
   - type: rewrite
-    source: /.redwood/functions
-    destination: replace_me_with_api_url
+    source: /.redwood/functions/*
+    destination: replace_me_with_api_url/*
   - type: rewrite
     source: /*
     destination: /index.html
@@ -24,8 +24,8 @@ services:
   - key: NODE_VERSION
     value: 14
   - key: DATABASE_URL
-    value: file:/data/sqlite.db
+    value: file:./data/sqlite.db
   disk:
     name: sqlite-data
-    mountPath: /api/db/data
-    sizeGB: 5
+    mountPath: /opt/render/project/src/api/db/data
+    sizeGB: 1
