@@ -1,5 +1,13 @@
 import { Link, routes } from '@redwoodjs/router'
 
+export const beforeQuery = (props) => {
+  return {
+    variables: props,
+    fetchPolicy: 'no-cache',
+    pollInterval: 1000,
+  }
+}
+
 export const QUERY = gql`
   query VOTE($type: String) {
     count: voteCount(choice: $type)

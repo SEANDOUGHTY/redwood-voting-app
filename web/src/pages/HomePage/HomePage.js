@@ -10,11 +10,7 @@ const CREATE_VOTE_MUTATION = gql`
 `
 
 const HomePage = () => {
-  const [createVote] = useMutation(CREATE_VOTE_MUTATION, {
-    onCompleted: () => {
-      location.reload()
-    },
-  })
+  const [createVote] = useMutation(CREATE_VOTE_MUTATION)
 
   const onSave = (choice) => {
     const input = {
