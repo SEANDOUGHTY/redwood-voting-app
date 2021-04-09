@@ -1,5 +1,3 @@
-import { Link, routes } from '@redwoodjs/router'
-
 export const beforeQuery = (props) => {
   return {
     variables: props,
@@ -17,21 +15,15 @@ export const QUERY = gql`
 
 export const Loading = () => <div>Loading...</div>
 
-export const Empty = () => {
-  return (
-    <div className="rw-text-center">
-      {'No votes yet. '}
-      <Link to={routes.newVote()} className="rw-link">
-        {'Create one?'}
-      </Link>
-    </div>
-  )
-}
-
 export const Success = ({ count, allCount }) => {
+  console.log(count)
+  console.log(allCount)
   return (
-    <p>
-      {count} Votes! ({((count / allCount) * 100).toFixed(1)}%)
-    </p>
+    <div>
+      <h2 className="temp-h2">
+        {allCount > 0 ? Math.round((count / allCount) * 100) : 50}%
+      </h2>
+      <div className="temp-p">{count} Votes</div>
+    </div>
   )
 }
