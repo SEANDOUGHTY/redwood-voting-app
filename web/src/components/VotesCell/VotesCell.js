@@ -16,8 +16,6 @@ export const QUERY = gql`
 export const Loading = () => <div>Loading...</div>
 
 export const Success = ({ count, allCount }) => {
-  console.log(count)
-  console.log(allCount)
   return (
     <div>
       <h2 className="temp-h2">
